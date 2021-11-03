@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id='app' class="container">
+        <header class="head">
+            <form action="#" method="get">
+                <input class="header_search" placeholder="Искать здесь..." type="text" v-model='searchLine'>
+                <button type="submit" class="button_search" v-on:click='filterGoods'>Поиск</button>
+            </form>
+            <button class="cart-button" type="button" v-on:mouseover='showCart'>Корзина</button>
+
+            <template v-if='isVisibleCart'>
+                <div class="cart_list" v-on:mouseleave='showCart'>
+                    <template v-if='this.cartList.length > 0'>
+                        <div class="cart-item" v-for='cartProduct in cartList' v-bind:key='cartProduct.id_product'>
+                            <h3>{{cartProduct.product_name}}</h3>
+                            <p>{{cartProduct.price}}</p>
+                            <button class="btn_delete_cart" v-on:click='deleteToCart(cartProduct)'>Удалить из
+                                корзины</button>
+                        </div>
+                        <div class="sum_price_cart">Общая стоимость: {{this.sumPrice}}</div>
+                    </template>
+
+                    <template v-else>
+                        <p class="cart_notification">Ваша корзина пуста
+                    </template>
+                </div>
+            </template>
+        </header>
+
+        <div class="goods-list">
+            <template v-if='this.filteredGoods.length > 0'>
+                <div class="goods-item" v-for='product in filteredGoods' v-bind:key='product.id_product'>
+                    <h3>{{product.product_name}}</h3>
+                    <p>{{product.price}}</p>
+                    <button class="btn_add_card" v-on:click='addToCart(product)'>Добавить в корзину</button>
+                </div>
+            </template>
+            <template v-else>
+                <p class="goods_notification">Товаров с таким совпадением не найдено</p>
+            </template>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
