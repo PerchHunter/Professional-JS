@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eShop Cart</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="head container">
+        <form action="#" method="get">
+            <input class="header_search" placeholder="Искать здесь..." type="search">
+            <button type="submit" class="button_search">Поиск</button>
+        </form>
+        <a class="index-button" type="button" href='index.html'>Главная</a>
+    </header>
+
+    <main class="primary container">
+        <div class="cart_case">
+            <div class="cart_list"></div>
+            <div class="sum_price_cart"></div>
+        </div>
+
+        <form id="form" class="callback_form">
+            <input id="name" class="callback_input" placeholder="Введите имя..." />
+            <input id="phone" class="callback_input" placeholder="Телефон. +7(000)000-0000" />
+            <input id="email" class="callback_input" placeholder="E-mail. mymail@mail.ru" />
+            <textarea id="comment" class="callback_textarea"
+                placeholder="Введите комментарий и проведите валидацию."></textarea>
+            <div class="form_button">
+                <input type="submit" value="Отправить" class="submit_input">
+                <input id="validation" type="text" value="Валидация" class="submit_input">
+            </div>
+        </form>
+
+    </main>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
