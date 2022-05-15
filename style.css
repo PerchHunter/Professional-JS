@@ -26,6 +26,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
 }
 
 .header_search {
@@ -44,7 +45,7 @@ body {
     border: 2px solid rgb(59, 49, 95);
 }
 
-.cart-button, .index-button, .button_search {
+.cart-button, .button_search {
     font: 400 16px/19px 'Times New Roman';
     color: whitesmoke;
     background-color: rgb(82, 69, 133);
@@ -55,7 +56,7 @@ body {
     text-decoration: none;
 }
 
-.cart-button:hover, .index-button:hover, .button_search:hover {
+.cart-button:hover, .button_search:hover {
     opacity: 0.5;
 }
 
@@ -67,9 +68,11 @@ body {
 }
 
 .goods-list {
-    width: 100%;
+    width: 40%;
     display: flex;
     justify-content: space-evenly;
+    margin-top: 30px;
+    
 }
 
 .goods-item, .cart-item {
@@ -111,90 +114,33 @@ p + button:hover {
 }
 
 .cart_list {
-    width: 300px;
-    min-height: 400px;
+    width: 450px;
+    min-height: 100px;
     padding: 0px 15px 30px 15px;
     box-sizing: border-box;
     border: 5px solid rgba(74, 59, 134, 0.5);
+    background-color: rgba(74, 59, 134, 0.3);
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
+    position: absolute;
+    top: 55px;
+    right: 0px;
 }
 
-.sum_price_cart {
+.sum_price_cart, .cart_notification, .goods_notification {
     font: bold 20px/22px 'Times New Roman';
     color: whitesmoke;
-    width:300px;
+    width: 450px;
     height:50px;
     margin-top: 30px;
     padding: 10px;
     box-sizing: border-box;
     border-radius: 20px;
-    background-color:rgba(74, 59, 134, 0.5);
+    background-color:rgba(74, 59, 134, 0.3);
     text-align: center;
-}
-
-.callback_form {
-    width: 300px;
-    min-height: 400px;
-    padding: 0px 15px 30px 15px;
-    box-sizing: border-box;
     border: 5px solid rgba(74, 59, 134, 0.5);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-
 }
 
-.callback_input {
-    width: 270px;
-    font: 400 16px/19px 'Times New Roman';
-    color: rgb(192, 192, 192);
-    background-color: rgb(82, 69, 133);
-    border: 1px solid  rgb(82, 69, 133);
-    box-sizing: border-box;
-    padding: 10px 13px;
-    margin-right: 0px;
-}
 
-.callback_input:focus, .callback_textarea:focus {
-    outline: none;
-    border: 1px solid rgb(59, 49, 95);
-}
-
-.callback_textarea {
-    width: 270px;
-    height: 280px;
-    background-color: rgb(82, 69, 133);
-    outline: none;
-    border: none;
-    font: 400 16px/19px 'Times New Roman';
-    color: rgb(192, 192, 192);
-    padding: 10px 13px;
-    box-sizing: border-box;
-}
-
-.form_button {
-    display: flex;
-    justify-content: space-evenly;
-    width: 100%;
-}
-
-.submit_input {
-    width: 105px;
-    font: 400 16px/19px 'Times New Roman';
-    color: whitesmoke;
-    background-color: rgb(82, 69, 133);
-    border: 1px solid  rgb(82, 69, 133);
-    padding: 10px 13px;
-    cursor: pointer;
-    transition: all .2s ease;
-    text-align: center;
-    box-sizing: border-box;
-}
-
-.submit_input:hover {
-    opacity: 0.5;
-}
